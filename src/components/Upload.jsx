@@ -94,7 +94,7 @@ alert(err.message)
 
         <input type='file' onChange={handleSelect}/>
         <img src={dataUrl} alt='200 Note'/>
-       <Button variant="primary"onClick={handleSubmit}style={{width:'10%'}}>Upload file</Button><span onClick={handleCopy} style={{backgroundColor:'blue',border:'2px solid blue',borderRadius:'20px',color:'white'}}>Copy image url</span>
+       <Button variant="primary"onClick={handleSubmit}style={{width:'50%'}}>Upload file</Button><span onClick={handleCopy} style={{backgroundColor:'blue',border:'2px solid blue',borderRadius:'20px',color:'white'}}>Copy image url</span>
         <p>{dataUrl}</p>
         <Input type='text' placeholder='Enter product image url' title='Product Image URL'  name='url' value={formValues.url}  handleChange={handleChange}/>
        <Button variant="primary" onClick={handleSubmitData} style={{width:'100%'}}>Add product</Button>{' '}
