@@ -4,6 +4,7 @@ import ReactTextArea from './widgets/ReactQuill'
 import RichTextarea from './widgets/ReactQuill';
 import Parse from 'parse';
 import Loading from './Loading';
+import Button from 'react-bootstrap/Button';
 
 const Upload = () => {
     const tableName = 'Cart';
@@ -79,7 +80,11 @@ alert(err.message)
         });
     }
     console.log(dataUrl)
-    console.log(formValues)
+    console.log(formValues);
+    const handleCopy = ()=>{
+        navigator.clipboard.writeText(dataUrl);
+        alert('image url copied successfully')
+    }
   return (
     <div>
 <Input type='text' placeholder='Enter product name' title='Product Name' name='name' value={formValues.name} handleChange={handleChange} />
@@ -89,10 +94,10 @@ alert(err.message)
 
         <input type='file' onChange={handleSelect}/>
         <img src={dataUrl} alt='200 Note'/>
-        <button onClick={handleSubmit}>Upload file</button>
+       <Button variant="primary"onClick={handleSubmit}style={{width:'10%'}}>Upload file</Button><span onClick={handleCopy} style={{backgroundColor:'blue',border:'2px solid blue',borderRadius:'20px',color:'white'}}>Copy image url</span>
         <p>{dataUrl}</p>
         <Input type='text' placeholder='Enter product image url' title='Product Image URL'  name='url' value={formValues.url}  handleChange={handleChange}/>
-         <button onClick={handleSubmitData}>Save</button>
+       <Button variant="primary" onClick={handleSubmitData} style={{width:'100%'}}>Add product</Button>{' '}
     </div>
   )
 }
