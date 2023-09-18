@@ -92,7 +92,7 @@ try {
           <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg" value={formValues.email} name="email" onChange={handleChange}/>
           <MDBInput wrapperClass='mb-4' label='Phone Number' id='formControlLg' type='number' size="lg"  value={formValues.number} name="number" onChange={handleChange} />
           <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"  value={formValues.password} name="password" onChange={handleChange} />
-          <MDBInput wrapperClass='mb-4' label='Invitation Code' id='formControlLg' type='text' size="lg"  value={formValues.upline} name="upline" onChange={handleChange} />
+          <MDBInput wrapperClass='mb-4' label='Address' id='formControlLg' type='text' size="lg"  value={formValues.address} name="upline" onChange={handleChange} />
           {loading && <Loading/>}
         <MDBBtn className="mb-4 px-5" color='dark' size='lg' onClick={handleSubmit}>Sign Up</MDBBtn>
         
