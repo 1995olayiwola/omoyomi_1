@@ -27,7 +27,7 @@ import {Link} from 'react-router-dom';
 const Register = () => {
   const history = useHistory()
   const [formValues,setFormValues] = React.useState({
-    email:"",number:'',username:'',password:'',address:''
+    email:"",number:'',fullName:'',password:'',address:''
   })
   const handleChange = (e)=>{
     setFormValues(()=>{
@@ -41,7 +41,8 @@ e.preventDefault();
 setFormValues(async()=>{
   console.log(formValues)
   const user = new Parse.User();
-  user.set("username", formValues.username);
+  user.set("username", formValues.email);
+  user.set("fullName", formValues.fullName);
 user.set("password", formValues.password);
 user.set("email", formValues.email);
 user.set("phone", formValues.number);
@@ -87,7 +88,7 @@ try {
         </div>
 
         <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Register here</h5>
-        <MDBInput wrapperClass='mb-4' label='Username' id='formControlLg' type='text' size="lg"  value={formValues.username} name="username" onChange={handleChange} />
+        <MDBInput wrapperClass='mb-4' label='Username' id='formControlLg' type='text' size="lg"  value={formValues.fullName} name="fullName" onChange={handleChange} />
 
           <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg" value={formValues.email} name="email" onChange={handleChange}/>
           <MDBInput wrapperClass='mb-4' label='Phone Number' id='formControlLg' type='number' size="lg"  value={formValues.number} name="number" onChange={handleChange} />
