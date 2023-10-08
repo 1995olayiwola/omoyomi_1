@@ -5,6 +5,8 @@ import Footer from './Footer';
 import Parse from 'parse';
 import {useHistory} from 'react-router-dom';
 
+
+
 const Home = (props) =>{
   const user = Parse.User.current();
   const [data,setData]=React.useState({
@@ -283,7 +285,7 @@ As of 2023, WireTech Solutions remains a market leader in the wire industry, wit
                     </ul>
                     <a href="shop-single.html" className="h2 text-decoration-none text-dark">{item.get('name')}</a>
                     <p className="card-text">
-                     {item.get('description')}
+                   <div dangerouslySetInnerHTML={{__html: item.get('description')}} />
                     </p>
                     <p className="text-muted">Reviews {0}</p>
                   </div>

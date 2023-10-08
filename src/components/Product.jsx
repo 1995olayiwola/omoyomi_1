@@ -351,7 +351,7 @@ alert(err.message)
                     </p>
                    
                     <h6>Description:</h6>
-                  <p>{item.get('description')}</p>
+                  <p><div dangerouslySetInnerHTML={{__html: item.get('description')}} /></p>
                     
                     <form action method="GET">
                       <input type="hidden" name="product-title" defaultValue="Activewear" />
